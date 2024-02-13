@@ -1,0 +1,17 @@
+apiVersion: apps/v1 # Specifies the API version
+kind: Deployment
+metadata:
+  name: commands-deployment
+spec:
+  replicas: 1
+  selector: # Selecting template we'll be using
+    matchLabels:
+      app: commandservice
+  template: # Defining pod/container we'll use
+    metadata:
+      labels:
+        app: commandservice
+    spec:
+      containers:
+        - name: commandservice
+          image: asandell/commandservice:latest
