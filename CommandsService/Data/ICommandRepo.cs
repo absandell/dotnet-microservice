@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Microsoft.EntityFrameworkCore;
 using CommandsService.Models;
 
 namespace CommandsService.Data
@@ -14,7 +15,7 @@ namespace CommandsService.Data
 
         // Commands
         IEnumerable<Command> GetCommandsForPlatform(int platformId);
-        CommandsService GetCommand(int platformId, int commandId);
+        Command GetCommand(int platformId, int commandId);
         void CreateCommand(int platformId, Command command);
     }
 }
