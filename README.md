@@ -18,10 +18,54 @@ This project is comprised of two Microservices which communicate using a mix of 
 
 ## Requests for Testing Functionality in Local Environment
 ### Commands Service
-* Inbound Connection Test: `POST http://localhost:6201/api/c/platforms`
-* Create Command for Platform: `POST http://localhost:6201/api/c/platforms/{Platform ID}/commands`
-        * Request Body: `{"HowTo": "Describe command use-case", "CommandLine": "Describe command syntax"}` 
-* Get All Platforms: `GET http://localhost:6201/api/c/platforms`
-* Get all Commands for Platform: `GET http://localhost:6201/api/c/platforms/{Platform ID}/commands`
-* Get Command for Platform: `GET http://localhost:6201/api/c/platforms/{Platform ID}/commands/{Command ID}`
+---
+Inbound Connection Test: `POST http://localhost:6201/api/c/platforms`
+
+Create Command for Platform: `POST http://localhost:6201/api/c/platforms/{Platform ID}/commands`
+* Request Body: `{"HowTo": "Describe command use-case", "CommandLine": "Describe command syntax"}` 
+
+Get All Platforms: `GET http://localhost:6201/api/c/platforms`
+
+Get all Commands for Platform: `GET http://localhost:6201/api/c/platforms/{Platform ID}/commands`
+
+Get Command for Platform: `GET http://localhost:6201/api/c/platforms/{Platform ID}/commands/{Command ID}`
+
+---
+### Platform Service
+---
+Create a new platform: `POST http://localhost:5051/api/platforms`
+* Request Body: `{"name": "Name of platform", "publisher": "Name of platform publisher", "cost": "Describe if platform is free, open-source, paid, etc."}`
+
+Get all platforms: `GET http://localhost:5051/api/platforms`
+
+Get an individual platform: `GET http://localhost:5051/api/platforms/{Platform ID}`
+
+---
+
+## Requests for Testing Functionality in K8s Environment
+### Commands Service
+---
+Inbound Connection Test: `POST http://acme.com/api/c/platforms`
+
+Create Command for Platform: `POST http://acme.com/api/c/platforms/{Platform ID}/commands`
+* Request Body: `{"HowTo": "Describe command use-case", "CommandLine": "Describe command syntax"}` 
+
+Get All Platforms: `GET http://acme.com/api/c/platforms`
+
+Get all Commands for Platform: `GET http://acme.com/api/c/platforms/{Platform ID}/commands`
+
+Get Command for Platform: `GET http://acme.com/api/c/platforms/{Platform ID}/commands/{Command ID}`
+
+---
+### Platform Service
+---
+Create a new platform: `POST http://acme.com/api/platforms`
+* Request Body: `{"name": "Name of platform", "publisher": "Name of platform publisher", "cost": "Describe if platform is free, open-source, paid, etc."}`
+
+Get all platforms: `GET http://acme.com/api/platforms`
+
+Get an individual platform: `GET http://acme.com/api/platforms/{Platform ID}`
+
+---
+
 
