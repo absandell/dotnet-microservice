@@ -58,6 +58,7 @@ namespace CommandsService.Controllers
             Console.WriteLine($"--> Hit CreateCommandForPlatform: {platformId}");
             if(!_repository.PlatformExists(platformId))
             {
+                Console.WriteLine($"--> Platform: {platformId} does not exist");
                 return NotFound();
             }
 
@@ -69,7 +70,10 @@ namespace CommandsService.Controllers
 
             return CreatedAtRoute(
                 nameof(GetCommandForPlatform),
-                new { platformId = platformId, commandId = commandReadDto.Id},
+                new { 
+                    platformId = platformId,
+                    commandId = commandReadDto.Id
+                },
                 commandReadDto
             );
         }
